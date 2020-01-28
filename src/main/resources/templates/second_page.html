@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+</head>
+<body data-ng-app="myNewApp" data-ng-controller="myNewCtrl">
+<div class="jumbotron text-center">
+    <h2>This is demo for grid layout in bootstrap</h2>
+</div>
+
+<div class="container bg-success">By default there are 12 columns</div>
+<div class="container">
+    <div class="row">
+        <div class="col-3 bg-success">first</div>
+        <div class="col-3 bg-primary">second</div>
+        <div class="col-3 bg-warning">third</div>
+        <div class="col-3 bg-danger">forth</div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-2 bg-primary">{{person.name}}</div>
+        <div class="col-2 bg-success">{{person.lastName}}</div>
+        <div class="col-8 bg-dark text-white">{{person}}</div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <p>
+        Init variables:
+        <input type="text" name="1" id="1" data-ng-model="person.name">
+    </p>
+</div>
+<script>
+    let app = angular.module('myNewApp', []);
+    app.controller('myNewCtrl', function ($scope) {
+        $scope.person = {
+            name: "John",
+            lastName: "Doe"
+        }
+    });
+</script>
+</body>
+</html>

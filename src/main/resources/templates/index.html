@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body data-ng-app="" data-ng-init="defText='This is jubothrone'">
+<div class="jumbotron text-center">
+    <div class="container"><h3>The beautiful header</h3>
+        <h4 data-ng-bind="defText"></h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4">There will be link to first page
+            <div class="container">
+                <a href="first_page">link</a>
+            </div>
+        </div>
+        <div class="col-4">There will be link to the second page
+            <div class="container">
+                <a href="second_page">link</a>
+            </div>
+        </div>
+        <div class="col-4">There will be link to the third page
+            <div class="container"><a href="third_page">link</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt-5">
+    <p>
+        <input type="text" name="changeHeader" id="changeHeader" data-ng-model="defText">
+    </p>
+    <p>
+        Current value is:<br>
+        {{defText}}
+    </p>
+</div>
+</body>
+</html>
