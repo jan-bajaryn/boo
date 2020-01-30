@@ -35,4 +35,19 @@ public class MainController {
     public String tableDemo() {
         return "/tables/table_demo";
     }
+
+    @GetMapping("/img_demo/first")
+    public String imgDemoFirst() {
+        return "/img_demo/first";
+    }
+
+    @GetMapping("/jumbotrons/links")
+    public String jumbotronsLinks() {
+        return "/jumbotrons/links";
+    }
+
+    @GetMapping("/jumbotrons/another")
+    public String jumbotronsAnother() {
+        return "/jumbotrons/another";
+    }
 }
