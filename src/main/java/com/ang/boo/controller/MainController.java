@@ -20,8 +20,19 @@ public class MainController {
     public String secondPage() {
         return "/second_page";
     }
+
     @GetMapping("/third_page")
     public String thirdPage() {
         return "/third_page";
+    }
+
+    @GetMapping("/list_links")
+    public String listLinks() {
+        return "/list_links";
+    }
+
+    @GetMapping("/tables/table_demo")
+    public String tableDemo() {
+        return "/tables/table_demo";
     }
 }

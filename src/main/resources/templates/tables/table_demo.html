@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tables demo</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body data-ng-app="myApp" data-ng-controller="ctrl">
+<div class="jumbotron text-center">
+    <h3>Demo page for table</h3>
+</div>
+
+<div class="container">
+    There is normal table with table-border and thead-dark:
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>surname</th>
+            <th>id in database</th>
+        </tr>
+        </thead>
+        <tr data-ng-repeat="p in people">
+            <td>{{$index}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.surname}}</td>
+            <td>{{p.id}}</td>
+        </tr>
+    </table>
+</div>
+<div class="container">
+    There are ordinary table with table-striped:
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>surname</td>
+            <td>id in database</td>
+        </tr>
+        </thead>
+        <tr data-ng-repeat="p in people">
+            <td>{{$index}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.surname}}</td>
+            <td>{{p.id}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    Table with hover option and dark:
+    <table class="table table-hover table-dark">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>surname</td>
+            <td>id in database</td>
+        </tr>
+        </thead>
+        <tr data-ng-repeat="p in people">
+            <td>{{$index}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.surname}}</td>
+            <td>{{p.id}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="container">
+    Table with hover option and dark:
+    <table class="table table-hover table-sm">
+        <thead class="thead-dark">
+        <tr>
+            <td>id</td>
+            <td>name</td>
+            <td>surname</td>
+            <td>id in database</td>
+        </tr>
+        </thead>
+        <tr data-ng-repeat="p in people">
+            <td>{{$index}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.surname}}</td>
+            <td>{{p.id}}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    let app = angular.module('myApp', []);
+    app.controller('ctrl', function ($scope, $http) {
+        // $scope.people =
+        //     [{
+        //         name: 'John',
+        //         surname: 'Doe'
+        //     },
+        //         {
+        //             name: 'Abraham',
+        //             surname: 'Linkoln'
+        //         },
+        //         {
+        //             name: 'Alister',
+        //             surname: 'Krouli'
+        //         }];
+        $http.get('/get_all')
+            .then(function (response) {
+                $scope.people = response.data;
+            })
+    });
+</script>
+
+</body>
+</html>
